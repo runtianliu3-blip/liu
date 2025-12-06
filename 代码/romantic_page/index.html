@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘润田 & 田小昕 的专属空间</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- 音乐播放器 (隐藏) -->
+    <audio id="bg-music" loop>
+        <source src="music.mp3" type="audio/mp3">
+        您的浏览器不支持 audio 标签。
+    </audio>
+
+    <!-- 开场遮罩层 -->
+    <div id="overlay" class="overlay">
+        <!-- 动态背景装饰 -->
+        <div class="bg-heart-decoration">❤</div>
+        <div class="overlay-content">
+            <!-- 打字机效果占位符 -->
+            <h1 id="typing-title"></h1>
+            <p id="typing-text"></p>
+            <button id="start-btn" style="opacity: 0">开启浪漫之旅 💜</button>
+        </div>
+        <!-- 新增：扩散层，用于转场动画 -->
+        <div class="transition-layer"></div>
+    </div>
+
+    <!-- 主内容区 -->
+    <div class="main-container" id="main-content">
+        
+        <!-- 头部 -->
+        <header>
+            <div class="title-box">
+                <h1>刘润田 <span class="heart">❤</span> 田小昕</h1>
+                <p class="subtitle">在这个紫色的季节，只想和你在一起</p>
+            </div>
+        </header>
+
+        <!-- 照片展示区 (拍立得风格) - 增加点击事件 -->
+        <section class="gallery">
+            <!-- 照片1：她喜欢的花 -->
+            <div class="polaroid" onclick="showModal(this, '看到这束花，就想到了你。在这个紫色的世界里，你比花儿更温柔，愿你的每一天都如花般绽放。')">
+                <div class="photo-wrapper">
+                    <img src="images/4.jpg" alt="Purple Flowers">
+                </div>
+                <div class="caption">唯美紫藤，如你般温柔</div>
+            </div>
+
+            <!-- 照片2：可爱的动物 -->
+            <div class="polaroid" onclick="showModal(this, '就像这只可爱的小猫咪，我也想整天粘着你。你的笑容是我见过最治愈的风景。')">
+                <div class="photo-wrapper">
+                    <img src="images/3.jpg" alt="Cute Cat">
+                </div>
+                <div class="caption">可爱的田田，也想蹭蹭你</div>
+            </div>
+
+            <!-- 照片3：紫色风景 -->
+            <div class="polaroid" onclick="showModal(this, '这是我为你构建的紫色梦境，每一个像素都藏着对你的喜欢。未来的路，我们一起走过更多风景。')">
+                <div class="photo-wrapper">
+                    <img src="images/2.jpg" alt="Purple Landscape">
+                </div>
+                <div class="caption">这是属于我们的紫色梦境</div>
+            </div>
+             
+             <!-- 照片4：女主照片 -->
+             <div class="polaroid" onclick="showModal(this, '全世界最美的田小昕，遇见你是我最大的幸运。第57次想念，终于变成了第1次勇敢的告白。')">
+                <div class="photo-wrapper">
+                    <img src="images/1.jpg" alt="Her Photo">
+                </div>
+                <div class="caption">全世界最美的田小昕</div>
+            </div>
+        </section>
+
+        <!-- 纪念日信息区 -->
+        <section class="info-box">
+            <div class="info-card birthday-card">
+                <h3>🎂 生日快乐</h3>
+                <p><span>👸 田小昕：</span> 5月30日</p>
+                <p><span>🤴 刘润田：</span> 4月30日</p>
+            </div>
+            <div class="info-card days-card">
+                <p>我们已经在一起</p>
+                <div class="count-wrapper">
+                    <h2 id="days-count">0</h2> <span class="unit">天</span>
+                </div>
+                <p class="small-date">Starting from 2025.11.24</p>
+            </div>
+        </section>
+
+        <!-- 文字寄语 -->
+        <section class="message-box">
+            <h2>关于我们</h2>
+            <div id="dynamic-messages">
+                <!-- 动态内容 -->
+            </div>
+        </section>
+
+        <!-- 音乐控制按钮 -->
+        <div class="music-control" id="music-toggle">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+    </div>
+
+    <!-- 照片详情模态框 -->
+    <div id="photo-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="modal-img-wrapper">
+                <img id="modal-img" src="" alt="">
+            </div>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
